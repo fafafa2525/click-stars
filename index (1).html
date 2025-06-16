@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ابدأ النقر ⭐</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    #stars, #energy {
+      font-size: 2.5em;
+      margin: 10px 0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffca28;
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ffca28a1;
+      transition: all 0.2s ease;
+    }
+    button:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+  <h1>❤️ ابدأ النقر</h1>
+  <div id="stars">⭐ 0</div>
+  <div id="energy">⚡ 10</div>
+  <button onclick="collectStar()">اجمع نجمة 🔘</button>
+
+  <script>
+    let stars = 0;
+    let energy = 10;
+
+    function collectStar() {
+      if (energy > 0) {
+        stars++;
+        energy--;
+        document.getElementById("stars").innerText = `⭐ ${stars}`;
+        document.getElementById("energy").innerText = `⚡ ${energy}`;
+      } else {
+        alert("⚡ لا توجد طاقة كافية");
+      }
+    }
+  </script>
+</body>
+</html>
